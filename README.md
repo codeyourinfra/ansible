@@ -15,7 +15,17 @@ Ansible role to install [Ansible](https://www.ansible.com).
 
 ## Build process
 
-The build process is performed in [Travis CI](https://travis-ci.org/codeyourinfra/ansible). During the build, the role is tested by using [Ubuntu Docker images with Python 3](https://hub.docker.com/r/codeyourinfra/python3).
+The build process is performed in [Travis CI](https://travis-ci.org/codeyourinfra/ansible). During the build, the role is tested by using [Molecule](https://molecule.readthedocs.io).
+
+## Test yourself
+
+Inside your [Python virtual environment](https://docs.python.org/3/tutorial/venv.html), run:
+
+`pip install -r requirements.txt`
+
+And then:
+
+`molecule test`
 
 ## Author Information
 

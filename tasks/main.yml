@@ -5,8 +5,7 @@
   loop:
     - libssl-dev
     - libffi-dev
-    - python3-pip
+    - python-pip
 - name: Install Ansible
   pip:
     name: ansible
-    state: latest
