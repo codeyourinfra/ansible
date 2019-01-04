@@ -6,6 +6,7 @@
     - libssl-dev
     - libffi-dev
     - python-pip
+    - python3-pip
 - name: Install Ansible
   pip:
     name: ansible
