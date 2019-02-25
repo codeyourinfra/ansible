@@ -13,6 +13,8 @@ Ansible role to install [Ansible](https://www.ansible.com).
     - codeyourinfra.ansible
 ```
 
+The role requires the *ansible_python_version* variable, obtained through the [gathering facts phase](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#information-discovered-from-systems-facts). So please don't turn off facts.
+
 ## Build process
 
 The build process is performed in [Travis CI](https://travis-ci.org/codeyourinfra/ansible). During the build, the role is tested by using [Molecule](https://molecule.readthedocs.io).
