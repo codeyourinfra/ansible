@@ -1,0 +1,7 @@
+---
+- name: Install EPEL
+  yum:
+    name: "{{ item }}"
+  loop:
+    - epel-release
+    - ansible

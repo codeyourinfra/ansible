@@ -13,7 +13,7 @@ Ansible role to install [Ansible](https://www.ansible.com).
     - codeyourinfra.ansible
 ```
 
-The role requires the *ansible_python_version* variable, obtained through the [gathering facts phase](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#information-discovered-from-systems-facts). So please don't turn off facts.
+The role requires some variables obtained through the [gathering facts phase](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#information-discovered-from-systems-facts). So please don't turn off facts.
 
 ## Build process
 
@@ -21,11 +21,15 @@ The build process is performed in [Travis CI](https://travis-ci.org/codeyourinfr
 
 ## Test yourself
 
-Inside your [Python virtual environment](https://docs.python.org/3/tutorial/venv.html), run:
+First of all, create your [Python virtual environment](https://docs.python.org/3/tutorial/venv.html) and activate it:
 
-`pip install -r requirements.txt`
+`python -m venv env && source env/bin/activate`
 
-And then:
+After that, install all requirements:
+
+`pip install wheel && pip install -r requirements.txt`
+
+Finally, execute the test:
 
 `molecule test`
 

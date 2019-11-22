@@ -1,25 +1,2 @@
----
-- name: Install required packages
-  apt:
-    name: "{{ item }}"
-  loop:
-    - libssl-dev
-    - libffi-dev
-
-- name: Python version
-  debug:
-    var: ansible_python_version
-
-- name: Install pip3/uninstall pip, if python3.
-  apt:
-    name: python3-pip
-    state: "{{ 'present' if ansible_python_version is version('3', '>=') else 'absent' }}"
-
-- name: Install pip/unsintall pip3, if python.
-  apt:
-    name: python-pip
-    state: "{{ 'present' if ansible_python_version is version('3', '<') else 'absent' }}"
-
-- name: Install Ansible
-  pip:
-    name: ansible
+- name: Execute the appropriate tasks, depending on the distribution.
+  include: "{{ ansible_distribution | lower }}.yml"
